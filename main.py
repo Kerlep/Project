@@ -11,12 +11,12 @@ def echo(message):
 # Обработчик изображений
 @bot.message_handler(content_types=['photo'])
 def echo_photo(message):
-    bot.send_photo(message.chat.id, message.photo[-1].file_id)
+    bot.send_photo(message.chat.id, message.photo.file_id)
 
 # Обработчик стикеров
 @bot.message_handler(content_types=['sticker'])
 def echo_sticker(message):
-    bot.send_sticker(message.chat.id, message.sticker[-1].file_id)
+    bot.send_sticker(message.chat.id, message.sticker.file_id)
 
 # Запуск бота
 bot.polling()
